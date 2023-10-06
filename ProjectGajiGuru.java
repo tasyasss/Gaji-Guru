@@ -7,13 +7,12 @@ public class ProjectGajiGuru {
 
         double gajiPerJam, jamMengajar, gajiPokok, gajiTotal;
         double tunjanganJabatan, tunjanganGuru1 = 0, tunjanganGuru2 = 0, tunjanganGuru3 = 0, tunjanganDinas;
-        String nama, jabatan, tugasDinas;
-        long NIP;
+        String nama, jabatan, tugasDinas, NIP;
         int statusGuru;
 
         // ----- INPUT DATA -----
         System.out.print("Masukkan NIP anda: ");
-            NIP = sc.nextLong();
+            NIP = sc.nextLine();
             sc.nextLine();
         System.out.print("Masukkan nama anda: ");
             nama = sc.nextLine();
@@ -41,6 +40,7 @@ public class ProjectGajiGuru {
         System.out.println("1. Guru part-time \n2. Guru full-time \n3. Guru tetap");
         System.out.print("Masukkan status guru anda (1/2/3): ");
         statusGuru = sc.nextInt();
+            sc.nextLine();
 
         switch (statusGuru) {
             case 1:
@@ -57,7 +57,6 @@ public class ProjectGajiGuru {
                 break;
         }
 
-        sc.nextLine();
         // ----- TUGAS DINAS -----
         System.out.print("Apakah anda melakukan tugas dinas (y/t): ");
         tugasDinas = sc.nextLine();
@@ -71,6 +70,8 @@ public class ProjectGajiGuru {
             System.out.println("Tunjangan dinas anda: " + tunjanganDinas);
         }
 
+        System.out.println("\n"+NIP + " " + nama + " " + jamMengajar + " " + jabatan + " " + statusGuru + " " + tugasDinas + "\n");
+        
         // ----- HITUNGAN AKUMULASI -----
        
         gajiTotal = gajiPokok + tunjanganJabatan + tunjanganGuru1 + tunjanganGuru2 + tunjanganGuru3 + tunjanganDinas;
