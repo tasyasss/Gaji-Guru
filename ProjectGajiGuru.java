@@ -5,19 +5,18 @@ public class ProjectGajiGuru {
         // ----- DEKLARASI -----
         Scanner sc = new Scanner(System.in);
 
-        double gajiPerJam, jamMengajar, gajiPokok, gajiTotal;
+        double gajiPerJam, gajiPokok, gajiTotal;
         double tunjanganJabatan, tunjanganGuru1 = 0, tunjanganGuru2 = 0, tunjanganGuru3 = 0, tunjanganDinas;
         String nama, jabatan, tugasDinas, NIP;
-        int statusGuru;
+        int statusGuru, jamMengajar;
 
         // ----- INPUT DATA -----
         System.out.print("Masukkan NIP anda: ");
             NIP = sc.nextLine();
-            sc.nextLine();
         System.out.print("Masukkan nama anda: ");
             nama = sc.nextLine();
         System.out.print("Masukkan jumlah jam mengajar anda: ");
-            jamMengajar = sc.nextDouble();
+            jamMengajar = sc.nextInt();
             sc.nextLine();
         System.out.print("Apakah anda memiliki jabatan (y/t): ");
             jabatan = sc.nextLine();
@@ -71,7 +70,7 @@ public class ProjectGajiGuru {
         }
 
         System.out.println("\n"+NIP + " " + nama + " " + jamMengajar + " " + jabatan + " " + statusGuru + " " + tugasDinas + "\n");
-        
+
         // ----- HITUNGAN AKUMULASI -----
        
         gajiTotal = gajiPokok + tunjanganJabatan + tunjanganGuru1 + tunjanganGuru2 + tunjanganGuru3 + tunjanganDinas;
