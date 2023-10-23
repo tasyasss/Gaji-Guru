@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-public class GajiGuru03 {
+public class GajiGuruJob05 {
     public static void main(String[] args) {
         // ----- DEKLARASI -----
         Scanner sc = new Scanner(System.in);
 
         double gajiPerJam, gajiPokok, gajiTotal, jamMengajar;
-        double tunjanganJabatan = 0, tunjanganGuru1 = 0, tunjanganGuru2 = 0, tunjanganGuru3 = 0, tunjanganDinas;
+        double tunjanganJabatan, tunjanganGuru1 = 0, tunjanganGuru2 = 0, tunjanganGuru3 = 0, tunjanganDinas;
         String nama, jabatan, tugasDinas, NIP;
-        int statusGuru, jenisJabatan;
+        int statusGuru;
 
         // ----- INPUT DATA -----
         System.out.print("Masukkan NIP anda: ");
@@ -16,44 +16,24 @@ public class GajiGuru03 {
         System.out.print("Masukkan nama anda: ");
             nama = sc.nextLine();
         System.out.print("Masukkan jumlah jam mengajar anda: ");
-            jamMengajar = sc.nextDouble();
+            jamMengajar = sc.nextInt();
             sc.nextLine();
         System.out.print("Apakah anda memiliki jabatan (y/t): ");
             jabatan = sc.nextLine();
 
         // ----- PROSES PENGHITUNGAN -----
         gajiPerJam = 40000;
+        tunjanganJabatan = gajiPerJam * 5;
         gajiPokok = (gajiPerJam * 96) * (jamMengajar / 96);
 
         // ----- JABATAN ------
         if (jabatan.equals("y")) {
-            System.out.println("1. Kepala Sekolah \n2. Wakil Kepala Sekolah \n3. Sekretaris \n4. Bendahara \n5. Kepala Urusan");
-            System.out.print("Masukkan Jabatan anda (angka): ");
-            jenisJabatan = sc.nextInt();
-
-            if(jenisJabatan == 1){
-                tunjanganJabatan = 750000;
-                System.out.println("Tunjangan Jabatan anda (Kepala Sekolah): " + tunjanganJabatan);
-            } else if (jenisJabatan == 2){
-                tunjanganJabatan = 600000;
-                System.out.println("Tunjangan Jabatan anda (Wakil Kepala Sekolah): " + tunjanganJabatan);
-            } else if (jenisJabatan == 3){
-                tunjanganJabatan = 450000;
-                System.out.println("Tunjangan Jabatan anda (Sekretaris): " + tunjanganJabatan);
-            } else if (jenisJabatan == 4){
-                tunjanganJabatan = 300000;
-                System.out.println("Tunjangan Jabatan anda (Bendahara): " + tunjanganJabatan);
-            } else if (jenisJabatan == 5){
-                tunjanganJabatan = 300000;
-                System.out.println("Tunjangan Jabatan anda (Kepala Urusan): " + tunjanganJabatan);
-            }
+            System.out.println("Tunjangan jabatan anda: " + tunjanganJabatan);
         }
         else {
             tunjanganJabatan = 0;
             System.out.println("Tunjangan jabatan anda: " + tunjanganJabatan);
         }
-
-            System.out.println();
 
         // ----- STATUS GURU -----
         System.out.println("1. Guru part-time \n2. Guru full-time \n3. Guru tetap");
@@ -64,19 +44,17 @@ public class GajiGuru03 {
         switch (statusGuru) {
             case 1:
                 tunjanganGuru1 = gajiPerJam * 2;
-                System.out.println("Tunjangan status guru anda (guru part-time): " + tunjanganGuru1);
+                System.out.println("Tunjangan status anda: " + tunjanganGuru1);
                 break;
             case 2:
                 tunjanganGuru2 = gajiPerJam * 3;
-                System.out.println("Tunjangan status guru anda (guru full-time): " + tunjanganGuru2);
+                System.out.println("Tunjangan status anda: " + tunjanganGuru2);
                 break;
             case 3:
                 tunjanganGuru3 = gajiPerJam * 4;
-                System.out.println("Tunjangan status guru anda (guru tetap): " + tunjanganGuru3);
+                System.out.println("Tunjangan status anda: " + tunjanganGuru3);
                 break;
         }
-
-            System.out.println();
 
         // ----- TUGAS DINAS -----
         System.out.print("Apakah anda melakukan tugas dinas (y/t): ");
@@ -91,7 +69,7 @@ public class GajiGuru03 {
             System.out.println("Tunjangan dinas anda: " + tunjanganDinas);
         }
 
-        System.out.println("\n"+ NIP + " " + nama + " " + jamMengajar + " " + jabatan + " " + statusGuru + " " + tugasDinas + "\n");
+        System.out.println("\n"+NIP + " " + nama + " " + jamMengajar + " " + jabatan + " " + statusGuru + " " + tugasDinas + "\n");
 
         // ----- HITUNGAN AKUMULASI -----
        
@@ -104,4 +82,3 @@ public class GajiGuru03 {
         sc.close();
     }
 }
-
