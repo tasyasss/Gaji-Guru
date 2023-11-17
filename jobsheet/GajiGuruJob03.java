@@ -1,3 +1,4 @@
+package jobsheet;
 import java.util.Scanner;
 
 public class GajiGuruJob03 {

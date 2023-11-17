@@ -1,3 +1,4 @@
+package jobsheet;
 import java.util.Scanner;
 
 public class GajiGuruJob07 {
@@ -10,7 +11,7 @@ public class GajiGuruJob07 {
         int statusGuru, jenisJabatan, menu;
 
         gajiPerJam = 40000;
-
+        
         do{
             System.out.println("----- SELAMAT DATANG DI SISTEM PENGGAJIAN GURU ----- \n");
             System.out.println("1. Menu Data Guru \n2. Menu Gaji Guru \n3. EXIT");
