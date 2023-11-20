@@ -130,7 +130,6 @@ public class ProjectAkhirAldo_menu3 {
 
                         switch (menu) {
                             case 1:
-                            
                                 System.out.println("===== KELOLA DATA GURU =====");
                                 System.out.println(" ");
                                 System.out.println("-------------------------------------------------------");

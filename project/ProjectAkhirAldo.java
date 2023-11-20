@@ -45,6 +45,12 @@ public class ProjectAkhirAldo {
         absen[3][3] = 96;
         absen[3][4] = 96;
 
+        int[][] gajiPokok = new int[6][7];
+
+        int[][] tunjangan = new int[6][7];
+
+        int[][] gajiTotal = new int[6][7];
+        
         while (true) {
 
             System.out.println("------ Login Sistem Penggajian Guru ------");
@@ -212,7 +218,55 @@ public class ProjectAkhirAldo {
                                 } while (opsiAbsen != 2);
                                 break;
                             case 3:
+                                break;
+                            case 4:
+                            System.out.println("===== PELAPORAN GAJI BULAN INI =====");
+                            System.out.println(" ");
 
+                            System.out.print("Masukkan Bulan: ");
+                            String inputBulan = sc.next();
+
+                            String key1 = inputBulan;
+                            for (int i = 1; i < bulan.length; i++) {
+                                if (bulan[i].equalsIgnoreCase(key1)) {
+                                    int perJam = 25000;
+                                    for (int k = 1; k < absen.length; k++) {
+                                        for (int l = 1; l < absen[k].length; l++) {
+                                            gajiPokok[k][l] = absen[k][l] * perJam;
+                                        }
+                                    }
+                                    for (int j = 1; j < gajiPokok.length; j++) {
+                                        for (int k = 0; k < gajiPokok[j].length; k++) {
+                                            if(status[j] == "Guru Part-Time"){
+                                                tunjangan[j][k] = gajiPokok[j][k] * 1;
+                                            } else if(status[j] == "Guru Kontrak"){
+                                                tunjangan[j][k] = (int)(gajiPokok[j][k] * 1.25);
+                                            } else {
+                                                tunjangan[j][k] = (int)(gajiPokok[j][k] * 1.5);
+                                            }
+                                        }
+                                    }
+                                    for (int l = 1; l < gajiTotal.length; l++) {
+                                        for (int m = 1; m < gajiTotal[l].length; m++) {
+                                            gajiTotal[l][m] = gajiPokok[l][m] + tunjangan[l][m];
+                                        }
+                                    }
+                                    System.out.println(" ");
+                                    System.out.println("--------------------------");
+                                    System.out.printf("| %-9s | %-10s |%n", "NIP", "Gaji Total");
+                                    System.out.println("--------------------------");
+
+                                    for (int j = 0; j < gajiTotal.length; j++) {
+                                        if (gajiTotal[j][i] != 0 && NIP[j] != 0) {
+                                            System.out.printf("| %-9s | %-10s |%n", NIP[j], gajiTotal[j][i]);
+                                            System.out.println("--------------------------");
+                                        }                                              
+                                    }
+                                    System.out.println(" ");
+                                }
+                            }
+                            
+                            break;
                         }
                     } while (menu != 6);
                 } else { // menu guru
