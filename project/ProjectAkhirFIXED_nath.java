@@ -1,7 +1,7 @@
 package project;
 import java.util.Scanner;
 
-public class ProjectAkhirAldo_menu3 {
+public class ProjectAkhirFIXED_nath {
     
 
     public static void main(String[] args) {
@@ -352,7 +352,7 @@ public class ProjectAkhirAldo_menu3 {
 
                                         for (int j = 0; j < gajiTotal.length; j++) {
                                             if (gajiTotal[j][i] != 0 && NIP[j] != 0) {
-                                                System.out.printf("| %-9s | %-15s | %-10s | %n", NIP[j], nama[j], gajiTotal[j][i]);
+                                                System.out.printf("| %-9s | %-15s | %-10s |%n", NIP[j], nama[j], gajiTotal[j][i]);
                                                 System.out.println("--------------------------------------------");
                                             }                                              
                                         }
@@ -361,7 +361,51 @@ public class ProjectAkhirAldo_menu3 {
                                 }
                                 break;
                             case 5: // HISTORI
-                                break;
+                                System.out.println("===== HISTORI GAJI GURU =====");
+                                System.out.print("Masukkan NIP: ");
+                                inputNIP = sc.nextInt();
+
+                                int key3 = inputNIP;
+                                for (int i = 0; i < NIP.length; i++) {
+                                    if (NIP[i] == key3) {
+                                        int perJam = 25000;
+                                        for (int k = 1; k < absen.length; k++) {
+                                            for (int l = 1; l < absen[k].length; l++) {
+                                                gajiPokok[k][l] = absen[k][l] * perJam;
+                                            }
+                                        }
+                                        for (int j = 1; j < gajiPokok.length; j++) {
+                                            for (int k = 0; k < gajiPokok[j].length; k++) {
+                                                if(status[j] == "Guru Part-Time"){
+                                                    tunjangan[j][k] = gajiPokok[j][k] * 1;
+                                                } else if(status[j] == "Guru Kontrak"){
+                                                    tunjangan[j][k] = (int)(gajiPokok[j][k] * 1.25);
+                                                } else {
+                                                    tunjangan[j][k] = (int)(gajiPokok[j][k] * 1.5);
+                                                }
+                                            }
+                                        }
+                                        for (int l = 1; l < gajiTotal.length; l++) {
+                                            for (int m = 1; m < gajiTotal[l].length; m++) {
+                                                gajiTotal[l][m] = gajiPokok[l][m] + tunjangan[l][m];
+                                            }
+                                        }
+
+                                        System.out.println();
+                                        System.out.println("Nama: " + nama[i]);
+                                        System.out.println("-----------------------------------------------------------");
+                                        System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", "Bulan", "Gaji Pokok", "Tunjangan", "Gaji Total");
+                                        System.out.println("-----------------------------------------------------------");
+                                        for (int j = 1; j < bulan.length; j++) {
+                                            if (nama[i] != null && status[i] != null && bulan[i] != null && gajiPokok[i][j] != 0 && tunjangan[i][j] != 0 && gajiTotal[i][j] != 0) {
+                                                System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", bulan[j], gajiPokok[i][j], tunjangan[i][j], gajiTotal[i][j]);
+                                                System.out.println("-----------------------------------------------------------");
+                                            }   
+                                        }
+                                        System.out.println();
+                                    }
+                                }
+                            break;
                         }
                     } while (menu != 6);
                 } else { // menu guru
@@ -411,9 +455,7 @@ public class ProjectAkhirAldo_menu3 {
                                         int cariAbsen = absenTerakhir;
                                         int indeksAbsen1D = -1;
                                         int indeksAbsen2D = -1;
-                                        // for (int k = 0; k < panjangAbsen1D; k++) {
                                         for (int k = panjangAbsen1D - 1; k >= 0; k--) {
-                                            // for (int l = 0; l < panjangAbsen2D; l++) {
                                             for (int l = panjangAbsen2D - 1; l >= 0; l--) {
                                                 if (absen[k][l] == cariAbsen) {
                                                     indeksAbsen1D = k;
@@ -466,85 +508,45 @@ public class ProjectAkhirAldo_menu3 {
                                 break;
                             case 3:
                                 System.out.println("===== HISTORI =====");
-                                System.out.println("-------------------------------------");
-                                System.out.printf("| %-10s | %-15s |%n", "Bulan", "Gaji Total");
-                                System.out.println("-------------------------------------");
+                                System.out.println("-----------------------------------------------------------");
+                                System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", "Bulan", "Gaji Pokok", "Tunjangan", "Gaji Total");
+                                System.out.println("-----------------------------------------------------------");
 
                                 for (int i = 1; i < NIP.length; i++) {
                                     if (NIP[i] == loginNIP) {
-                                        // NYARI ABSEN TERAKHIR
-                                        int panjangAbsen1D = absen.length;
-                                        int panjangAbsen2D = absen[i].length;
-                                        // int absenTerakhir = 0;
-                                        // for (int j = panjangAbsen2D - 1; j >= 0; j--) {
-                                        //     if (absen[i][j] != 0) {
-                                        //         absenTerakhir = absen [i][j];
-                                        //         break;
-                                        //     }
-                                        // }
-                                        // System.out.println("Absensi terakhir: " + absenTerakhir);
-
-                                        // BULAN
-                                        // int cariAbsen = absenTerakhir;
-                                        // int indeksAbsen1D = -1;
-                                        // int indeksAbsen2D = -1;
-                                        // // for (int k = 0; k < panjangAbsen1D; k++) {
-                                        // for (int k = panjangAbsen1D - 1; k >= 0; k--) {
-                                        //     // for (int l = 0; l < panjangAbsen2D; l++) {
-                                        //     for (int l = panjangAbsen2D - 1; l >= 0; l--) {
-                                        //         if (absen[k][l] == cariAbsen) {
-                                        //             indeksAbsen1D = k;
-                                        //             indeksAbsen2D = l;
-                                        //             break;
-                                        //         }
-                                        //     }
-                                        // }
-                                        // indeksAbsen2D itu indeks absensi terakhir
-                                        // bulan[i] = bulan[indeksAbsen2D];
-                                        // System.out.println("Bulan: " + bulan[i]);
-                                        
-                                        //GAJI POKOK
                                         int perJam = 25000;
-                                        for (int k = 1; k < panjangAbsen2D; k++) {
-                                            gajiPokok[i][k] = absen[i][k] * perJam;
-                                        }
-                                        // System.out.println("Gaji Pokok: " + gajiPokok[i][indeksAbsen2D]);
-
-                                        //TUNJANGAN
-                                        for (int j = 1; j < panjangAbsen2D; j++) {
-                                            if(status[i] == "guru part-time"){
-                                                tunjangan[i][j] = gajiPokok[i][j] * 1;
-                                            } else if(status[i] == "guru kontrak"){
-                                                tunjangan[i][j] = (int)(gajiPokok[i][j] * 1.25);
-                                            } else {
-                                                tunjangan[i][j] = (int)(gajiPokok[i][j] * 1.5);
+                                        for (int k = 1; k < absen.length; k++) {
+                                            for (int l = 1; l < absen[k].length; l++) {
+                                                gajiPokok[k][l] = absen[k][l] * perJam;
                                             }
                                         }
-                                        // System.out.println("Tunjangan : " + tunjangan[i][indeksAbsen2D]);
-
-                                        //GAJI TOTAL
-                                        for (int k = 1; k < panjangAbsen2D; k++) {
-                                            gajiTotal[i][k] = gajiPokok[i][k] + tunjangan[i][k];
-                                        }
-
-                                        System.out.println();
-                                        System.out.println("Bulan " + bulan[1] + " gaji total " + gajiTotal[i][1]);
-                                        System.out.println("Bulan " + bulan[2] + " gaji total " + gajiTotal[i][2]);
-                                        System.out.println("Bulan " + bulan[3] + " gaji total " + gajiTotal[i][3]);
-                                        System.out.println("Bulan " + bulan[4] + " gaji total " + gajiTotal[i][4]);
-                                        System.out.println();
-
-                                        // INI ERROR GATAU LG INI UDH STUCK
-                                        for (int k = 1; k <= gajiTotal.length; k++) {
-                                            for (int j = 1 ; j <= bulan.length; j++) {
-                                                System.out.println("-------------------------------------");
-                                                System.out.printf("| %-10s | %-15s |%n", bulan[j], gajiTotal[j][k]);
+                                        for (int j = 1; j < gajiPokok.length; j++) {
+                                            for (int k = 0; k < gajiPokok[j].length; k++) {
+                                                if(status[j] == "Guru Part-Time"){
+                                                    tunjangan[j][k] = gajiPokok[j][k] * 1;
+                                                } else if(status[j] == "Guru Kontrak"){
+                                                    tunjangan[j][k] = (int)(gajiPokok[j][k] * 1.25);
+                                                } else {
+                                                    tunjangan[j][k] = (int)(gajiPokok[j][k] * 1.5);
+                                                }
                                             }
+                                        }
+                                        for (int l = 1; l < gajiTotal.length; l++) {
+                                            for (int m = 1; m < gajiTotal[l].length; m++) {
+                                                gajiTotal[l][m] = gajiPokok[l][m] + tunjangan[l][m];
+                                            }
+                                        }
+                                        for (int j = 1; j < bulan.length; j++) {
+                                            if (nama[i] != null && status[i] != null && bulan[i] != null && gajiPokok[i][j] != 0 && tunjangan[i][j] != 0 && gajiTotal[i][j] != 0) {
+                                                System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", bulan[j], gajiPokok[i][j], tunjangan[i][j], gajiTotal[i][j]);
+                                                System.out.println("-----------------------------------------------------------");
+                                                
+                                            }   
                                         }
                                         System.out.println();
                                     }
                                 }
-                                break;
+                            break;
                         }
                     } while (menu != 4);
                 }
