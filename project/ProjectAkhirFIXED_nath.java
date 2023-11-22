@@ -12,7 +12,11 @@ public class ProjectAkhirFIXED_nath {
         String inputPass, inputStatus;
         int menu = 0, opsiLain, opsiAbsen, employeeCount = 4, inputNIP, loginNIP;
 
-        String[] passwordArray = { "admin123", "guru1", "guru2", "guru3" };
+        String[] passwordArray = new String[6];
+        passwordArray[0] = "admin123";
+        passwordArray[1] = "guru1";
+        passwordArray[2] = "guru2";
+        passwordArray[3] = "guru3";
 
         int[] NIP = new int[6];
         NIP[0] = 123123; // admin
@@ -128,6 +132,8 @@ public class ProjectAkhirFIXED_nath {
                                             System.out.println("Guru Tetap");
                                             System.out.print("Masukkan Status: ");
                                             status[employeeCount] = sc.nextLine();
+                                            System.out.print("Masukkan Password: ");
+                                            passwordArray[employeeCount] = sc.nextLine();
                                             employeeCount++;
                                         }
                                     } else if (opsiLain == 2) {
