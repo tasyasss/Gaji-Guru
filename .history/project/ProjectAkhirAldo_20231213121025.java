@@ -2,9 +2,9 @@ package project;
 import java.util.Scanner;
 
 public class ProjectAkhirAldo {
-    static int[][] gajiPokok = new int[6][13];
-    static int[][] tunjangan = new int[6][13];
-    static int[][] gajiTotal = new int[6][13];
+    static int[][] gajiPokok = new int[6][7];
+    static int[][] tunjangan = new int[6][7];
+    static int[][] gajiTotal = new int[6][7];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -419,7 +419,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 2: //Informasi Gaji Guru
-                                    System.out.printf("                         %-10s                         %n", "SLIP GAJI");
+                                    System.out.printf("                    %-20s                    %n", "INFORMASI GAJI GURU");
                                     System.out.println("============================================================");
                                     System.out.println();
                                     
@@ -521,6 +521,7 @@ public class ProjectAkhirAldo {
                 }
             }
         }
+        
     }
     public static void hitungGajiTotal(int[][] gajiPokok, int[][] tunjangan) {
         for (int l = 1; l < gajiTotal.length; l++) {

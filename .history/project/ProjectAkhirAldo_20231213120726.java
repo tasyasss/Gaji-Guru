@@ -2,9 +2,9 @@ package project;
 import java.util.Scanner;
 
 public class ProjectAkhirAldo {
-    static int[][] gajiPokok = new int[6][13];
-    static int[][] tunjangan = new int[6][13];
-    static int[][] gajiTotal = new int[6][13];
+    static int[][] gajiPokok = new int[6][7];
+    static int[][] tunjangan = new int[6][7];
+    static int[][] gajiTotal = new int[6][7];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -226,35 +226,7 @@ public class ProjectAkhirAldo {
                                                 System.out.println("=====================================================================================");
                                             }
                                         }
-                                        for (int i = 1; i < 2; i++) {
-                                            System.out.println("=====================================================================================");
-                                            System.out.printf("| %-9s ", "NIP");
-                                            System.out.print("|");
-                                            for (int j = 7; j < 13; j++) {
-                                                System.out.printf(" %-9s |", bulan[j]);
-                                            }
-                                            System.out.println();
-                                            System.out.println("=====================================================================================");
-                                        }
-                                        for (int i = 1; i < NIP.length; i++) {
-                                            int nipIndex = i;
-                                            if (NIP[i] != 0) {
-                                                System.out.printf("| %-9s |", NIP[nipIndex]);
-                                            }
     
-                                            for (int j = 7; j < 13; j++) {
-                                                if (NIP[i] != 0 && absen[i][j] == 0) {
-                                                    System.out.printf(" %-9s |", " ");
-                                                } else if (bulan[i] != null && absen[i][j] != 0) {
-                                                    System.out.printf(" %-9s |", absen[i][j]);
-                                                }
-                                            }
-                                            System.out.println();
-                                            if (bulan[i] != null && NIP[i] != 0) {
-                                                System.out.println("=====================================================================================");
-                                            }
-                                        }
-
                                         System.out.println("Pilih Opsi Kelola Absensi");
                                         System.out.println("1. Input Absensi");
                                         System.out.println("2. Kembali ke Menu");
@@ -273,7 +245,7 @@ public class ProjectAkhirAldo {
                                             int key = inputNIP;
                                             for (int i = 1; i < NIP.length; i++) {
                                                 if (NIP[i] == key) {
-                                                    int absenCount = 12;
+                                                    int absenCount = 5;
                                                     while (absen[i][absenCount] != 0 && absenCount < absen[i].length) {
                                                         absenCount++;
                                                     }
@@ -419,7 +391,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 2: //Informasi Gaji Guru
-                                    System.out.printf("                         %-10s                         %n", "SLIP GAJI");
+                                    System.out.printf("                    %-20s                    %n", "INFORMASI GAJI GURU");
                                     System.out.println("============================================================");
                                     System.out.println();
                                     
@@ -521,6 +493,7 @@ public class ProjectAkhirAldo {
                 }
             }
         }
+        
     }
     public static void hitungGajiTotal(int[][] gajiPokok, int[][] tunjangan) {
         for (int l = 1; l < gajiTotal.length; l++) {
