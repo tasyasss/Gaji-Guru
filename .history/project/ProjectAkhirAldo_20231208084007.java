@@ -91,7 +91,6 @@ public class ProjectAkhirAldo {
                     int key4 = loginNIP;
                     for (int i = 0; i < NIP.length; i++) {
                         if (NIP[i] == key4) {
-                            System.out.println("============================================================");
                             System.out.printf("|              %-30s              |%n", "SELAMAT DATANG " + nama[i]);
                             System.out.println("============================================================");
                             System.out.println();
@@ -99,8 +98,6 @@ public class ProjectAkhirAldo {
                     }
                     if (loginNIP == NIP[0]) {
                         do {
-                            System.out.printf("                            %-4s                            %n", "MENU");
-                            System.out.println("============================================================");
                             System.out.println("1. Kelola Data Guru");
                             System.out.println("2. Kelola Absen Guru");
                             System.out.println("3. Informasi Gaji Guru");
@@ -113,8 +110,7 @@ public class ProjectAkhirAldo {
     
                             switch (menu) {
                                 case 1:
-                                System.out.printf("                      %-16s                      %n", "KELOLA DATA GURU");
-                                System.out.println("============================================================");
+                                    System.out.println("===== KELOLA DATA GURU =====");
                                     do {
                                         System.out.println(" ");
                                         System.out.println("=======================================================");
@@ -173,8 +169,7 @@ public class ProjectAkhirAldo {
                                     break;
     
                                 case 2:
-                                    System.out.printf("                     %-18s                     %n", "KELOLA ABSENSI GURU");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== KELOLA ABSEN GURU =====");
                                     do {
                                         System.out.println(" ");
                                         for (int i = 1; i < 2; i++) {
@@ -245,8 +240,7 @@ public class ProjectAkhirAldo {
                                     break;
     
                                 case 3:
-                                    System.out.printf("                    %-20s                    %n", "INFORMASI GAJI GURU");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== INFORMASI GAJI GURU =====");
                                     System.out.println();
                                     System.out.print("Masukkan NIP: ");
                                     inputNIP = sc.nextInt();
@@ -280,8 +274,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 4:
-                                    System.out.printf("                       %-14s                       %n", "PELAPORAN GAJI");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== PELAPORAN GAJI BULAN INI =====");
                                     System.out.println(" ");
     
                                     System.out.print("Masukkan Bulan: ");
@@ -312,8 +305,7 @@ public class ProjectAkhirAldo {
                                     
                                     break;
                                 case 5: 
-                                    System.out.printf("                          %-8s                          %n", "HISTORI");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== HISTORI =====");
                                     System.out.print("Masukkan NIP: ");
                                     inputNIP = sc.nextInt();
     
@@ -345,8 +337,7 @@ public class ProjectAkhirAldo {
                         } while (menu != 6);
                     } else { // menu guru
                         do {
-                            System.out.printf("                            %-4s                            %n", "MENU");
-                            System.out.println("============================================================");
+                            System.out.println("===== SELAMAT DATANG DI MENU =====");
                             System.out.println("1. Informasi Data Guru");
                             System.out.println("2. Informasi Gaji Guru");
                             System.out.println("3. Histori");
@@ -360,8 +351,7 @@ public class ProjectAkhirAldo {
                                     for(int i = 1; i < NIP.length; i++){
                                         // AMBIL INDEKS NIP
                                         if (NIP[i] == loginNIP) {
-                                    System.out.printf("                    %-20s                    %n", "INFORMASI DATA GURU");
-                                    System.out.println("============================================================");
+                                            System.out.println("===== INFORMASI DATA GURU =====");
                                             System.out.println();
                                             System.out.println("=====================================");
                                             System.out.printf("| %-10s | %-20s |%n", "NIP", NIP[i]);
@@ -373,8 +363,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 2: //Informasi Gaji Guru
-                                    System.out.printf("                    %-20s                    %n", "INFORMASI GAJI GURU");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== INFORMASI GAJI GURU =====");
                                     System.out.println();
                                     
                                     for(int i = 1; i < NIP.length; i++){
@@ -406,8 +395,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 3:
-                                    System.out.printf("                          %-8s                          %n", "HISTORI");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== HISTORI =====");
                                     // BARIS JUDUL KOLOM
                                     System.out.println("===========================================================");
                                     System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", "Bulan", "Gaji Pokok", "Tunjangan", "Gaji Total");

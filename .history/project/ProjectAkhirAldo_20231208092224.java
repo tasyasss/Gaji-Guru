@@ -280,7 +280,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 4:
-                                    System.out.printf("                       %-14s                       %n", "PELAPORAN GAJI");
+                                    System.out.printf("                  %-24s                  %n", "PELAPORAN GAJI BULAN INI");
                                     System.out.println("============================================================");
                                     System.out.println(" ");
     
@@ -360,8 +360,7 @@ public class ProjectAkhirAldo {
                                     for(int i = 1; i < NIP.length; i++){
                                         // AMBIL INDEKS NIP
                                         if (NIP[i] == loginNIP) {
-                                    System.out.printf("                    %-20s                    %n", "INFORMASI DATA GURU");
-                                    System.out.println("============================================================");
+                                            System.out.println("===== INFORMASI DATA GURU =====");
                                             System.out.println();
                                             System.out.println("=====================================");
                                             System.out.printf("| %-10s | %-20s |%n", "NIP", NIP[i]);
@@ -406,8 +405,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 3:
-                                    System.out.printf("                          %-8s                          %n", "HISTORI");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== HISTORI =====");
                                     // BARIS JUDUL KOLOM
                                     System.out.println("===========================================================");
                                     System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", "Bulan", "Gaji Pokok", "Tunjangan", "Gaji Total");

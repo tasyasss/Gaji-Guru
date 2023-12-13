@@ -99,7 +99,7 @@ public class ProjectAkhirAldo {
                     }
                     if (loginNIP == NIP[0]) {
                         do {
-                            System.out.printf("                            %-4s                            %n", "MENU");
+                            System.out.printf("                            %-4s                            ", "MENU");
                             System.out.println("============================================================");
                             System.out.println("1. Kelola Data Guru");
                             System.out.println("2. Kelola Absen Guru");

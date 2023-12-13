@@ -280,7 +280,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 4:
-                                    System.out.printf("                       %-14s                       %n", "PELAPORAN GAJI");
+                                    System.out.printf("                  %-214s                  %n", "PELAPORAN GAJI");
                                     System.out.println("============================================================");
                                     System.out.println(" ");
     
@@ -406,8 +406,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 3:
-                                    System.out.printf("                          %-8s                          %n", "HISTORI");
-                                    System.out.println("============================================================");
+                                    System.out.println("===== HISTORI =====");
                                     // BARIS JUDUL KOLOM
                                     System.out.println("===========================================================");
                                     System.out.printf("| %-10s | %-12s | %-12s | %-12s |%n", "Bulan", "Gaji Pokok", "Tunjangan", "Gaji Total");
