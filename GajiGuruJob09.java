@@ -1,6 +1,16 @@
+// ada login
+// login ada array uname array pass
+// login istrue masuk menu
+// jam mengajar, status (yg penting)
+// menu 1 masukkan semua infirmasi
+// menu 2 menhambil isi array (NIP) lalu diproses
+// history 1 tahun (12 bulan)
+// slip 
+
+
 import java.util.Scanner;
 
-public class GajiGuruJob07 {
+public class GajiGuruJob09  {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
