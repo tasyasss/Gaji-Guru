@@ -419,7 +419,7 @@ public class ProjectAkhirAldo {
                                     }
                                     break;
                                 case 2: //Informasi Gaji Guru
-                                    System.out.printf("                         %-10s                         %n", "SLIP GAJI");
+                                    System.out.printf("                    %-20s                    %n", "INFORMASI GAJI GURU");
                                     System.out.println("============================================================");
                                     System.out.println();
                                     
